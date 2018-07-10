@@ -4,6 +4,7 @@ package ru.elanlum.task3;
 import ru.elanlum.task3.basic.paper.Notebook;
 import ru.elanlum.task3.basic.paper.PaperFormat;
 import ru.elanlum.task3.basic.writingTools.Pen;
+import ru.elanlum.task3.basic.AbstractStationery;
 
 import java.awt.*;
 
@@ -34,7 +35,11 @@ public class Employee {
     }
 
     public static void main(String[] args) {
+        employeeWorkplace = new EmployeeWorkplaceSort(1);
         setNewEmployeeWorkplace();
-        System.out.println(getEmployeeWorkplace());
+        getEmployeeWorkplace();
+        System.out.println(employeeWorkplace);
     }
+
+
 }
