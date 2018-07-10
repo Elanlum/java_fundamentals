@@ -11,7 +11,7 @@ public class Employee {
 
     private String name;
     private String Surname;
-    private EmployeeWorkplaceSort employeeWorkplace;
+    private static EmployeeWorkplaceSort employeeWorkplace;
 
     public Employee(String name, String surname, EmployeeWorkplaceSort employeeWorkplace) {
         this.name = name;
@@ -19,7 +19,7 @@ public class Employee {
         this.employeeWorkplace = employeeWorkplace;
     }
 
-    public void setNewEmployeeWorkplace() {
+    public static void setNewEmployeeWorkplace() {
         employeeWorkplace.clearStationery();
         employeeWorkplace.addStationary(new Pen("Pilot", 50, Color.BLACK, "medium"));
         employeeWorkplace.addStationary(new Pen("Pilot", 50, Color.BLACK, "medium"));
@@ -29,7 +29,12 @@ public class Employee {
                 100, Color.WHITE, Color.BLACK));
     }
 
-    public EmployeeWorkplaceSort getEmployeeWorkplace() {
+    public static EmployeeWorkplaceSort getEmployeeWorkplace() {
         return employeeWorkplace;
+    }
+
+    public static void main(String[] args) {
+        setNewEmployeeWorkplace();
+        System.out.println(getEmployeeWorkplace());
     }
 }

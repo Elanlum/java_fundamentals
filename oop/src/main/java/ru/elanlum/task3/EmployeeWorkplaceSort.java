@@ -50,7 +50,7 @@ public class EmployeeWorkplaceSort {
     public List<AbstractStationery> sortStationaryByCost() {
         List<AbstractStationery> stationeryList = new ArrayList<>();
         stationeryList.addAll(stationeryStorage.keySet());
-        stationeryList.sort(Comparator.comparingInt(AbstractStationery::getPrice));
+        stationeryList.sort(Comparator.comparingInt(abstractStationery -> abstractStationery.getPrice()));
         return stationeryList;
     }
 
