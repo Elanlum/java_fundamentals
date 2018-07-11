@@ -4,23 +4,23 @@ package ru.elanlum.task3;
 import ru.elanlum.task3.basic.paper.Notebook;
 import ru.elanlum.task3.basic.paper.PaperFormat;
 import ru.elanlum.task3.basic.writingTools.Pen;
-import ru.elanlum.task3.basic.AbstractStationery;
 
 import java.awt.*;
+import java.util.Iterator;
 
 public class Employee {
 
     private String name;
     private String Surname;
-    private static EmployeeWorkplaceSort employeeWorkplace;
+    private static EmployeeWorkplace employeeWorkplace;
 
-    public Employee(String name, String surname, EmployeeWorkplaceSort employeeWorkplace) {
+    public Employee(String name, String surname, EmployeeWorkplace employeeWorkplace) {
         this.name = name;
         Surname = surname;
         this.employeeWorkplace = employeeWorkplace;
     }
 
-    public static void setNewEmployeeWorkplace() {
+    public void setNewEmployeeWorkplace() {
         employeeWorkplace.clearStationery();
         employeeWorkplace.addStationary(new Pen("Pilot", 50, Color.BLACK, "medium"));
         employeeWorkplace.addStationary(new Pen("Pilot", 50, Color.BLACK, "medium"));
@@ -30,15 +30,16 @@ public class Employee {
                 100, Color.WHITE, Color.BLACK));
     }
 
-    public static EmployeeWorkplaceSort getEmployeeWorkplace() {
+    public EmployeeWorkplace getEmployeeWorkplace() {
         return employeeWorkplace;
     }
 
     public static void main(String[] args) {
-        employeeWorkplace = new EmployeeWorkplaceSort(1);
-        setNewEmployeeWorkplace();
-        getEmployeeWorkplace();
-        System.out.println(employeeWorkplace);
+        Employee E1 = new Employee("Vasya", "Pupkin", employeeWorkplace);
+        employeeWorkplace = new EmployeeWorkplace(1);
+        E1.setNewEmployeeWorkplace();
+        E1.getEmployeeWorkplace();
+        System.out.println("collection contents: " + E1);
     }
 
 

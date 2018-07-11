@@ -4,12 +4,12 @@ import ru.elanlum.task3.basic.AbstractStationery;
 
 import java.util.*;
 
-public class EmployeeWorkplaceSort {
+public class EmployeeWorkplace {
 
     private int deskNumber;
     private HashMap<AbstractStationery, Integer> stationeryStorage;
 
-    public EmployeeWorkplaceSort(int deskNumber) {
+    public EmployeeWorkplace(int deskNumber) {
         this.deskNumber = deskNumber;
         stationeryStorage = new HashMap<>();
     }
