@@ -39,7 +39,7 @@ public class Employee {
         employeeWorkplace = new EmployeeWorkplace(1);
         E1.setNewEmployeeWorkplace();
         E1.getEmployeeWorkplace();
-        System.out.println("collection contents: " + E1);
+        System.out.println(employeeWorkplace);
     }
 
 

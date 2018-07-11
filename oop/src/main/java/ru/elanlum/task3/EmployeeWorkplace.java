@@ -71,4 +71,11 @@ public class EmployeeWorkplace {
         return stationeryList;
     }
 
+    @Override
+    public String toString() {
+        return "EmployeeWorkplace{" +
+                "deskNumber=" + deskNumber +
+                ", stationeryStorage=" + stationeryStorage +
+                '}';
+    }
 }
