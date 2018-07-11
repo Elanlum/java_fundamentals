@@ -6,7 +6,6 @@ import ru.elanlum.task3.basic.paper.PaperFormat;
 import ru.elanlum.task3.basic.writingTools.Pen;
 
 import java.awt.*;
-import java.util.Iterator;
 
 public class Employee {
 
