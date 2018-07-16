@@ -1,0 +1,16 @@
+while - 3
+if - 4
+new - 1
+package - 1
+void - 4
+static - 1
+this - 6
+final - 4
+private - 8
+import - 2
+for - 4
+public - 11
+class - 2
+int - 8
+boolean - 4
+return - 4

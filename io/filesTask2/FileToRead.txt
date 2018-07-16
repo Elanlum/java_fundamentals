@@ -1,0 +1,89 @@
+package task1;
+
+import java.time.LocalDate;
+import java.util.logging.Logger;
+
+public class FileToRead {
+    private static final Logger logger = Logger.getLogger("task6.NuclearPoweredBoat");
+
+    private final String model;
+    private final LocalDate manufactureDate;
+    private int nuclearRocketNumber;
+    private Engine engine;
+
+    public FileToRead(String model, LocalDate manufactureDate, int nuclearRocketNumber, int maxSpeed) {
+        this.model = model;
+        this.manufactureDate = manufactureDate;
+        this.nuclearRocketNumber = nuclearRocketNumber;
+        this.engine = new Engine(maxSpeed);
+    }
+
+    public Engine getEngine() {
+        return this.engine;
+    }
+
+    public boolean launchRocket() {
+        boolean isLaunched = false;
+        if (nuclearRocketNumber > 0) {
+            nuclearRocketNumber--;
+            logger.info("Rocket was launched");
+            isLaunched = true;
+        }
+        return isLaunched;
+    }
+
+    class Engine {
+        private final int maxSpeed;
+        private int currentSpeed;
+        private boolean isStarted;
+
+        public Engine(int maxSpeed) {
+            this.maxSpeed = maxSpeed;
+        }
+
+        public void startEngine() {
+            isStarted = true;
+            logger.info(String.format("Engine is started, current speed is %s", currentSpeed));
+        }
+
+        public void stopEngine() {
+            if (isStarted) {
+                while (currentSpeed > 0) {
+                    currentSpeed--;
+                }
+                isStarted = false;
+                logger.info(String.format("Engine is stoped, current speed is %s", currentSpeed));
+            }
+
+        }
+
+        public void increaseCurrentSpeed(int increaseAmount) {
+            if (isStarted) {
+                while (currentSpeed < maxSpeed && increaseAmount > 0) {
+                    currentSpeed++;
+                    increaseAmount--;
+                    logger.info(String.format("Engine is working: %s, current speed is %d", isStarted, currentSpeed));
+                }
+            }
+        }
+
+        public void decreaseCurrentSpeed(int decreaseAmount) {
+            if (isStarted) {
+                while (currentSpeed > 0 && decreaseAmount > 0) {
+                    currentSpeed--;
+                    decreaseAmount--;
+                    logger.info(String.format("Engine is working: %s, current speed is %d", isStarted, currentSpeed));
+
+                }
+            }
+        }
+
+        public boolean isStarted() {
+            return isStarted;
+        }
+
+        public int getCurrentSpeed() {
+            return currentSpeed;
+        }
+    }
+}
