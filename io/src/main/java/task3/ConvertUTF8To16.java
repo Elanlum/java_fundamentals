@@ -9,14 +9,11 @@ public class ConvertUTF8To16 {
     public static void read(String filename) {
         try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "UTF8"))) {
             StringBuffer stringBuffer = new StringBuffer();
-//            while ((text = bufferedReader.readLine()) != null) {
-//                stringBuffer.append(text).append("\n");
-//                text = stringBuffer.toString();
-//                System.out.println(text);
-//            }
-            bufferedReader.lines().forEach(s -> stringBuffer.append(s).append("\n"));
+            while ((text = bufferedReader.readLine()) != null) {
+                stringBuffer.append(text).append("\r\n");
+                System.out.println(text);
+            }
             text = stringBuffer.toString();
-            System.out.println(text);
         } catch (UnsupportedEncodingException ee) {
             ee.printStackTrace();
         } catch (FileNotFoundException e) {
