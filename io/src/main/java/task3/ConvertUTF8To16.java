@@ -19,7 +19,8 @@ public class ConvertUTF8To16 {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
-            e.printStackTrace();
+
+
         }
     }
 
