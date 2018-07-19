@@ -27,7 +27,7 @@ public class FilmCollection implements Serializable {
         filmActorMap.put(film, mainActor);
     }
 
-    public FilmCollection uploadFilmCollection(){
+    public void uploadFilmCollection(){
         Optional<FilmCollection> optionalFilmCollection = Optional.empty();
         try(ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream("filesTask4/filmCollection.out"))){
 //            Optional<FilmCollection> optionalFilmCollection = Optional.of((FilmCollection) objectInputStream.readObject());
@@ -37,7 +37,6 @@ public class FilmCollection implements Serializable {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        return optionalFilmCollection.orElse(new FilmCollection());
     }
 
     public void saveFilmCollection(){
@@ -55,17 +54,17 @@ public class FilmCollection implements Serializable {
         return filmActorMap.get(film);
     }
 
-//    public static void main(String[] args) {
-//
-//        filmCollection = new FilmCollection();
-//        anjelina = new Actor("Angelina", "Jolie", LocalDate.of(1975, Month.APRIL, 4));
-//        brad = new Actor("Brad", "Pitt", LocalDate.of(1963, Month.DECEMBER, 18));
-//        filmCollection.addFilm(new Film("Troy", 2004, brad), brad);
-//        filmCollection.addFilm(new Film("The Tourist", 2010, anjelina), anjelina);
-//        filmCollection.saveFilmCollection();
-//        filmCollection.addFilm(new Film("The Tourist", 2010, anjelina), anjelina);
-//        filmCollection.addFilm(new Film("Mr and Mrs Smith", 2005, brad), brad);
-//        filmCollection.saveFilmCollection();
-//        filmCollection.uploadFilmCollection();
-//    }
+    public static void main(String[] args) {
+
+        filmCollection = new FilmCollection();
+        anjelina = new Actor("Angelina", "Jolie", LocalDate.of(1975, Month.APRIL, 4));
+        brad = new Actor("Brad", "Pitt", LocalDate.of(1963, Month.DECEMBER, 18));
+        filmCollection.addFilm(new Film("Troy", 2004, brad), brad);
+        filmCollection.addFilm(new Film("The Tourist", 2010, anjelina), anjelina);
+        filmCollection.saveFilmCollection();
+        filmCollection.addFilm(new Film("The Tourist", 2010, anjelina), anjelina);
+        filmCollection.addFilm(new Film("Mr and Mrs Smith", 2005, brad), brad);
+        filmCollection.saveFilmCollection();
+        filmCollection.uploadFilmCollection();
+    }
 }
