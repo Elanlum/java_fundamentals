@@ -23,7 +23,7 @@ public class SimpleResourceBundle {
         if(!propertiesFile.exists()){
             throw new NoPropertiesFileException(String.format("No such properties file in required directory", sourcefile));
         }
-        if(!sourcefile.endsWith(".prorepries")){
+        if(!sourcefile.endsWith(".properties")){
             throw new NoValidatePropertiesFileException("File should end with *.properties");
         }
         try(BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(propertiesFile)))){
